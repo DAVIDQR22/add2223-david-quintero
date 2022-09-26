@@ -156,9 +156,9 @@ Ahora creamos 3 usuarios `quintero1,quintero2,quintero3` usando el comando `sudo
     * Sólo tiene RAM, floppy
     * Tarjeta de red PXE en modo "red interna".
     * Configurar memoria gráfica a 128MB y habilitar el soporte 3D.
-    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/10cliente.PNG)
-    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/11cliente.PNG)
-    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/12cliente.PNG)
+    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/cliente10.PNG)
+    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/cliente11.PNG)
+    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/cliente12.PNG)
 
 * Con el servidor encendido, iniciar la MV cliente1 desde red/PXE:
     * Comprobar que todo funciona correctamente.
@@ -166,14 +166,14 @@ Ahora creamos 3 usuarios `quintero1,quintero2,quintero3` usando el comando `sudo
     conectar disquete Etherboot en la disquetera, tal y como se indica
     en la documentación de la web de LTSP.
     
-     ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/13cliente.PNG)
+     ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/cliente13.PNG)
      
      - Comprobamos que el cliente esta pillando la configuración del servidor.
      
-     ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/14cliente.PNG)
+     ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/cliente14.PNG)
      
      - Vemos que nos esta detedando bien loa maquina cliente desde el servidor.
      
-     ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/15cliente.PNG)
+     ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/cliente15.PNG)
      
      - Probamos a entrar como un usuario y vemos que funciona bien.

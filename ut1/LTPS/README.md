@@ -50,14 +50,14 @@ Lo primero que haremos sera instalar Ubuntu en nuestra máquina virtual ya confi
     - Mascara: 255.255.0.0
     - Puerta de enlace: 172.19.0.1
     - DNS: 8.8.4.4
-    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-1.PNG)
+    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-1.png)
 
 
   - Red 2 (red interna)
 
     - IP: 192.168.67.1
     - Mascara: 255.255.255.0
-    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-1-1.PNG)
+    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-1-1.png)
 
 ## 2.2 Configuración de host.
 
@@ -78,7 +78,7 @@ Lo primero que haremos sera instalar Ubuntu en nuestra máquina virtual ya confi
   - hostname -a
   - hostname -f
   - uname -a
-  ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-2.PNG)
+  ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-2.png)
 
 
 ## 2.4 Creación de usuarios
@@ -91,7 +91,7 @@ Ahora creamos 3 usuarios `quintero1,quintero2,quintero3` usando el comando `sudo
 
   - Primero instalaremos el servicio ssh para la conexión remota `apt-get install openssh-server`
 
-    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-2ssh.PNG)
+    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-2ssh.png)
 
 ### Cambiar la configuración de SSH
 
@@ -100,13 +100,13 @@ Ahora creamos 3 usuarios `quintero1,quintero2,quintero3` usando el comando `sudo
      * Quitar y/o comentar la línea `PermitRootLogin without-password`.
      * Dejar la siguiente configuración `PermitRootLogin yes`. SIN ALMOHADILLA.
      Las almohadillas `#` al comienzo de la línea la desactivan/deshabilitan/la comentan.
-   ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-2-1ssh.PNG)
+   ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-2-1ssh.png)
 
 * `systemctl restart sshd`, iniciar el servicio. Antes se hacía con `service ssh restart`.
 * `systemctl enable sshd`, para asegurarnos de que se va a iniciar el servicio cuando se encienda la máquina.
 * `systemctl status sshd`, comprobamos.
 
-    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-2-2ssh.PNG)
+    ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-2-2ssh.png)
 
   - Ahora pasaremos a instalar el servidor LSTP con los comandos (antes de eso ejecutar el comando: add-apt-repository ppa:ltsp, si no nos dejara ejecutar los comandos de abajo).
     * "apt install --install-recommends ltsp ipxe dnsmasq nfs-kernel-server"

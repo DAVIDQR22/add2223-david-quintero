@@ -108,7 +108,7 @@ Ahora creamos 3 usuarios `quintero1,quintero2,quintero3` usando el comando `sudo
 
     ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/3-2-2ssh.png)
 
-  - Ahora pasaremos a instalar el servidor LSTP con los comandos (antes de eso ejecutar el comando: add-apt-repository ppa:ltsp, si no nos dejara ejecutar los comandos de abajo).
+  - Ahora pasaremos a instalar el servidor LTSP con los comandos (antes de eso ejecutar el comando: add-apt-repository ppa:ltsp, si no nos dejara ejecutar los comandos de abajo).
     * "apt install --install-recommends ltsp ipxe dnsmasq nfs-kernel-server"
     * "ltsp dnsmasq --proxy-dhcp=0"
     ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/2.PNG)
@@ -120,7 +120,7 @@ Ahora creamos 3 usuarios `quintero1,quintero2,quintero3` usando el comando `sudo
 
 ## Configuración del DHCP
 
-- Ahora pasaremos a configurar el DHCP del servidor LSTP. Existen dos formas:
+- Ahora pasaremos a configurar el DHCP del servidor LTSP. Existen dos formas:
     
     * ltsp dnsmasq: uno es evitar cualquier configuración; esto generalmente significa que tiene una sola NIC en el servidor LTSP y un servidor DHCP externo, por ejemplo, un enrutador, pfsense o un servidor de Windows.
 
@@ -177,4 +177,4 @@ Ahora creamos 3 usuarios `quintero1,quintero2,quintero3` usando el comando `sudo
      ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/cliente15.PNG)
      
      - Probamos a entrar como un usuario y vemos que funciona bien.
-     - Con todo esto ya deberiamos haber terminado la configuración de nuestra maquina servidora LTPS.
+     - Con todo esto ya deberiamos haber terminado la configuración de nuestra maquina servidora LTSP.

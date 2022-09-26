@@ -9,7 +9,7 @@ ___
 
   - Video de funcionamiento
 
-      [![Alt text](https://youtu.be/rq606gmQ6GU)]
+      [![Alt text](https://youtu.be/rq606gmQ6GU)
 
 ___
 

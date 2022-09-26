@@ -172,8 +172,9 @@ Ahora creamos 3 usuarios `quintero1,quintero2,quintero3` usando el comando `sudo
      
      ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/cliente14.PNG)
      
-     - Vemos que nos esta detedando bien loa maquina cliente desde el servidor.
+     - Vemos que nos esta detectando bien la máquina cliente desde el servidor.
      
      ![host](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/LTPS/images/cliente15.PNG)
      
      - Probamos a entrar como un usuario y vemos que funciona bien.
+     - Con todo esto ya deberiamos haber terminado la configuración de nuestra maquina servidora LTPS.

@@ -3,14 +3,17 @@
 ## 1. Windows: slave VNC
 
 ### Instalación del servidor VNC
-
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente1.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente2.png)
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server1.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente4.png)
 
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server2.png)
 
 *  `Importante no olvidarse la contraseña será usada más adelante.`
 
 ***1.2 Ir a una máquina con GNU/Linux***
+
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server3.png)
 
 *  Ejecutamos el comando nmpa -Pn ipserver para comprobar que los servicios son visibles desde fuera de la máquina VNC-SERVER.
@@ -35,14 +38,22 @@
 
 ***2.1 Comprobaciones finales***
 
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/c4235b8d6b900b743e4520a51efc64a49ad622a2/1trimestre/u1/vnc/images/Windows/2-1-1-1.png)
-Introducimos la informacion de nuestro servidor para la conección.
+Comprobaciones para verificar que se han establecido las conexiones remotas:
 
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/c4235b8d6b900b743e4520a51efc64a49ad622a2/1trimestre/u1/vnc/images/Windows/2-1-1-2.png)
-Comprobamos que la conexión se ha realizado de manera correcta y tenemos control sobre nuestro servidor desde la máquina cliente.
+* Conectar desde GNU/Linix Master hacia GNU/Linux Slave.
+** Si tenemos problemas, cerrar la sesión en la máquina Slave, antes de iniciar la sesión desde la máquina Master.
 
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/c4235b8d6b900b743e4520a51efc64a49ad622a2/1trimestre/u1/vnc/images/Windows/2-1-4.png)
+* Ejecutar como superusuario lsof -i -nP en el servidor para comprobar las conexiones VNC.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente10.png)
+
+* Ejecutar vncserver -list en el servidor
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente11.png)
+
 Usando en VNC server el comando netstat -n para ver las conexiones VNC con el cliente.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server4.png)
 
 ## Linux
 

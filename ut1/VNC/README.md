@@ -28,30 +28,16 @@
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente4.png)
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente5.png)
 
-*   Ahora hacemos la Conección desde Windows Master hacia el Windows Slave.
+
+***2.1 Comprobaciones finales***
+
+Conectar desde Window Master hacia el Windows Slave.
 
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente6.png)
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente7.png)
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente8.png)
 
-- Vemos que hace la conexión sin problemas
-
-***2.1 Comprobaciones finales***
-
-Comprobaciones para verificar que se han establecido las conexiones remotas:
-
-* Conectar desde GNU/Linix Master hacia GNU/Linux Slave.
-** Si tenemos problemas, cerrar la sesión en la máquina Slave, antes de iniciar la sesión desde la máquina Master.
-
-* Ejecutar como superusuario lsof -i -nP en el servidor para comprobar las conexiones VNC.
-
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente10.png)
-
-* Ejecutar vncserver -list en el servidor
-
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente11.png)
-
-Usando en VNC server el comando netstat -n para ver las conexiones VNC con el cliente.
+Ir al servidor VNC y usar el comando netstat -n para ver las conexiones VNC con el cliente.
 
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server4.png)
 
@@ -102,13 +88,23 @@ Con nuestro usuario normal
     Ponemos lo siguiente para la conexión vncviewer IP-vnc-server:590N(siendo N el numero final del puerto de la conexión remota).
 
 **Comprobaciones finales**
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5.png)
 
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5-1.png)
-    
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5-2.png)
+Comprobaciones para verificar que se han establecido las conexiones remotas:
 
-    Las tres imagenes de arriba muestran el intento de una conexion desde GNU/Linix Master hacia GNU/Linux Slave. 
+* Conectar desde GNU/Linix Master hacia GNU/Linux Slave.
+** Si tenemos problemas, cerrar la sesión en la máquina Slave, antes de iniciar la sesión desde la máquina Master.
+
+* Ejecutar como superusuario lsof -i -nP en el servidor para comprobar las conexiones VNC.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente10.png)
+
+* Ejecutar vncserver -list en el servidor
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente11.png)
+
+Usando en VNC server el comando netstat -n para ver las conexiones VNC con el cliente.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server4.png)
  
  ## Comprobaciones con SSOO cruzados
 ![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5-3.png)

@@ -1,4 +1,4 @@
-## Windows
+# Windows
 
 ## 1. Windows: slave VNC
 
@@ -41,72 +41,73 @@ Ir al servidor VNC y usar el comando netstat -n para ver las conexiones VNC con 
 
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server4.png)
 
-## Linux
+# Linux
 
-## OpenSUSE: Slave VNC
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/c4235b8d6b900b743e4520a51efc64a49ad622a2/1trimestre/u1/vnc/images/Linux/3.png)
-Probamos la conexion vnc desde nuestras maquinas linux
+## 3 OpenSUSE: Slave VNC
 
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/c4235b8d6b900b743e4520a51efc64a49ad622a2/1trimestre/u1/vnc/images/Linux/1.png)
-Ademas de la ejecución como superusuario lsof -i -nP en el servidor para comprobar las conexiones VNC.
-
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/c4235b8d6b900b743e4520a51efc64a49ad622a2/1trimestre/u1/vnc/images/Linux/2.png)
-Ejecutar vncserver -list en el servidor.
-
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/3yast.png)
-
-Ir a Yast -> VNC
-   
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/3yast-1.png)
-
-    Permitir conexión remota.
-    Abrir puertos VNC en el cortafuegos.
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/3yast-2.png)
-
-Ir a Yast -> Cortafuegos
-
-    Revisar la configuración del cortafuegos.
+* Antes de empezar a hacer nada Ir a `Yast -> VNC`
+    * Permitir conexión remota. Esto configura el servicio `xinet`.
+    * Abrir puertos VNC en el cortafuegos
     
-    Debe estar permitido las conexiones a vnc-server.
- 
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/3yast-3.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linux0.png)
 
-Con nuestro usuario normal
+* `Yast -> VNC`
+    * Permitir conexión remota. Esto configura el servicio `xinet`.
+    * Abrir puertos VNC en el cortafuegos
 
-    Ejecutar vncserver en el servidor para iniciar el servicio VNC.
-    Ponemos claves para las conexiones VNC a nuestro escritorio.
-    Al final se nos muestra el número de nuestro escritorio remoto. Apuntar este número porque lo usaremos más adelante.
-    
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/3yast-4.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linux1.png)
 
-    Ejecutar ps -ef|grep vnc para comprobar que los servicios relacionados con vnc están en ejecución.
+* Ahora ejecutamos el comando vncserver
+   * Ponemos claves para las conexiones VNC a nuestro escritorio.
+   * Al final se nos muestra el número de nuestro escritorio remoto. 
+   `Apuntar este número porque lo usaremos más adelante.`
 
-## OpenSUSE: Master VNC
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/4.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linux2.png)
+  
+* vdir /home/nombrealumno/.vnc, vemos que se nos han creado unos ficheros de configuración VNC asociados a nuestro usuario.
 
-    Hacemos una conexión remota con vncviewer desde nuestro cliente.
-    Ponemos lo siguiente para la conexión vncviewer IP-vnc-server:590N(siendo N el numero final del puerto de la conexión remota).
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linux3.png)
 
-**Comprobaciones finales**
+* Ejecutar ps -ef|grep vnc para comprobar que los servicios relacionados con vnc están en ejecución.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linux4.png)
+
+* Ejecutar lsof -i -nP para comprobar que están los servicios en los puertos VNC (580X y 590X).
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linux5.png)
+
+***3.1 Ir a una máquina GNU/Linux***
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente6.png)
+
+## 4 OpenSUSE: Master VNC
+
+* `vncviewer` es un cliente VNC que viene con OpenSUSE.
+* En la conexión remota, hay que especificar `IP:5901`, `IP:5902`, etc.
+(Usar el número del escritorio remoto obtenido anteriormente).
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente7.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente8.png)
+
+## 4.1 Comprobaciones finales
 
 Comprobaciones para verificar que se han establecido las conexiones remotas:
-
 * Conectar desde GNU/Linix Master hacia GNU/Linux Slave.
-** Si tenemos problemas, cerrar la sesión en la máquina Slave, antes de iniciar la sesión desde la máquina Master.
+    * Si tenemos problemas, cerrar la sesión en la máquina Slave,
+    antes de iniciar la sesión desde la máquina Master.
 
-* Ejecutar como superusuario lsof -i -nP en el servidor para comprobar las conexiones VNC.
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente9.png)    
+
+* Ejecutar como superusuario `lsof -i -nP` en el servidor para comprobar las conexiones VNC.
 
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente10.png)
 
-* Ejecutar vncserver -list en el servidor
+* Ejecutar `vncserver -list` en el servidor.
 
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcliente11.png)
 
-Usando en VNC server el comando netstat -n para ver las conexiones VNC con el cliente.
-
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server4.png)
  
- ## Comprobaciones con SSOO cruzados
+ # 5 Comprobaciones con SSOO cruzados
 ![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5-3.png)
     
 ![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5-3-1.png)

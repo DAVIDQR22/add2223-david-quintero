@@ -1,16 +1,24 @@
 ## Windows
 
 ## 1. Windows: Slave VNC
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/fe8e263f2582e623cec7948d2bcae25873837f5a/1trimestre/u1/vnc/images/Windows/1.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server1.png)
 
 ***1.2 Ir a una máquina con GNU/Linux***
 ![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/fe8e263f2582e623cec7948d2bcae25873837f5a/1trimestre/u1/vnc/images/Windows/1-2.png)
 
 ## 2 Windows: Master VNC
 
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/c4235b8d6b900b743e4520a51efc64a49ad622a2/1trimestre/u1/vnc/images/Windows/2-1-1.png)
-    
-    Conección desde Windows Master hacia el Windows Slave.(Normalmente te debería aparecer una configuración de TightVCN pero como yo lo habia hecho y estaba siguiendo la rubrica no pude sacar la captura pero seria: TightVNC -> Custom -> Viewer)
+### Instalación del cliente VNC
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente1.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente2.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente3.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente4.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente5.png)
+
+*   Ahora hacemos la Conección desde Windows Master hacia el Windows Slave.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente6.png)
 
 ***2.1 Comprobaciones finales***
 

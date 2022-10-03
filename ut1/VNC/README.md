@@ -1,10 +1,19 @@
 ## Windows
 
-## 1. Windows: Slave VNC
+## 1. Windows: slave VNC
+
+### Instalación del servidor VNC
+
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server1.png)
 
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server2.png)
+
+*  `Importante no olvidarse la contraseña será usada más adelante.`
+
 ***1.2 Ir a una máquina con GNU/Linux***
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/fe8e263f2582e623cec7948d2bcae25873837f5a/1trimestre/u1/vnc/images/Windows/1-2.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/server3.png)
+
+*  Ejecutamos el comando nmpa -Pn ipserver para comprobar que los servicios son visibles desde fuera de la máquina VNC-SERVER.
 
 ## 2 Windows: Master VNC
 
@@ -19,6 +28,10 @@
 *   Ahora hacemos la Conección desde Windows Master hacia el Windows Slave.
 
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente6.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente7.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/cliente8.png)
+
+- Vemos que hace la conexión sin problemas
 
 ***2.1 Comprobaciones finales***
 

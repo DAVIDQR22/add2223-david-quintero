@@ -108,16 +108,26 @@ Comprobaciones para verificar que se han establecido las conexiones remotas:
 
  
  # 5 Comprobaciones con SSOO cruzados
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5-3.png)
-    
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5-3-1.png)
 
-    Conexión al cliente Windows con el servidor VNC GNU/Linux.
-    
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5-3-2.png)
+* Conectar el cliente GNU/Linux con el Servidor VNC Windows.
+Usaremos el comando `vncviewer IP-vnc-server` sin especificar puerto alguno.
 
-    Conexión al cliente Windows con el servidor VNC GNU/Linux.
-    
-![](https://github.com/DAVIDQR22/add21-22-david-quintero/blob/5fa79e648f5a63d1a5e13bfaea93befe47c3fcd9/1trimestre/u1/vnc/images/Linux/5-4.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcruzado1.png)
 
-    Ejecutar en el servidor GNU/Linux lsof -i -nP.
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcruzado2.png)
+
+
+* Ejecutar `netstat -n` en el servidor Windows.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/linux/linuxcruzado3.png)
+
+
+* Conectar el cliente Windows con el servidor VNC GNU/Linux.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/windowscruzado1.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/windowscruzado2.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/windowscruzado3.png)
+
+* Ejecutar en el servidor GNU/Linux `lsof -i -nP`.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/VNC/windows/windowscruzado4.png)

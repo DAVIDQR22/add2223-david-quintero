@@ -1,32 +1,46 @@
 # Servidor SSH
 ## Configuraciones de las maquinas
 ### 1. Configuración servidor Linux.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/1servidorssh.PNG)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux1.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux2.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux3.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux4.png)
 
- - Aqui tenemos la configuración que yo utilize para mi servidor linux ademas de algunas comprobaciones.
-  
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/2servidorssh.PNG)
+ - Aqui tenemos la configuración que yo utilize para mi servidor linux.
+ - 
+  ![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux5.png)
 
- - Comando lsblk para consultar las particiones y el comando blkid para consultar los UUID de la instalación
+ - Comprobamos los cambios que hemos echo en la configuracion de nuestro servidor.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/3servidorssh.PNG)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux6.png)
 
- - Creamos los usuarios que se ven en la imagen (PD: yo ya los tenia creados).
+ - Creamos los usuarios que se ven en la imagen.
 
 ### 1.2. Configuración cliente Linux.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/4clienteGNU.PNG)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/5clienteGNU.PNG)
+![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientelinux1.png)
+![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientelinux2.png) 
   
- - Configuración del equipo cliente Linux
+- Añadir en /etc/hosts los equipos server25g, y client25w.
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux7.png)
+
+- Comprobar haciendo ping a ambos equipos.
 
 ### 1.3. Configuración cliente Windows.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/6clienteWindows.PNG)
-
- - Configuración del equipo cliente Windows
+![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindows1.png)
+![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindows2.png)
+- Añadir en C:\Windows\System32\drivers\etc\hosts los equipos serverXXg y clientXXg.
+- Comprobar haciendo ping a ambos equipos.
+'(Falto el ping de la maquina windows pero se vera mas adelante que funciona bien y hay conexión)'
 
 ### 2. Instalación del servicio SSH en GNU/Linux
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxssh.png)
+
+- Comprobamos si tenenemos instalado openssh en nuestro servidor. 
+- Si no lo tenemos intalado lo instalamos
+
 ### 2.1 Comprobación
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/7clienteWindows.PNG)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxcomprobacion1.png)
 
   - Desde el propio servidor, verificar que el servicio está en ejecución.
   - systemctl status sshd, esta es la forma habitual de comprobar los servicios.
@@ -34,42 +48,56 @@
   - sudo lsof -i:22 -Pn, comprobar que el servicio está escuchando por el puerto 22.
 
 ### 2.2 Primera conexión SSH desde cliente GNU/Linux
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/8primeraconexionlinuxcliente.PNG)
+![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientelinux3.png)
   
- - ping serverXXg, comprobar la conectividad con el servidor.
+ - ping server25g, comprobar la conectividad con el servidor.
   nmap -Pn serverXXg, comprobar los puertos abiertos en el servidor (SSH debe estar open).
   
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/9primeraconexionlinuxcliente.PNG)
+![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientelinuxconexionserver4.png)
   
  - Desde el cliente GNU/Linux nos conectamos mediante ssh 1er-apellido-alumno1@serverXXg.
 
 ### 2.3 Primera conexión SSH desde cliente Windows
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/10primeraConexionWindowsCliente.PNG)
+![ClienteWindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindowsconexionserver1.png)
  
  - Desde el cliente Windows (usando PuTTY) nos conectamos al servidor SSH de GNU/Linux.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/11primeraConexionWindowsCliente.PNG)
+![ClienteWindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindowsconexionserver2.png)
 
  - Podremos ver el intercambio de claves que se produce en el primer proceso de conexión SSH. * ¿Te suena la clave que aparece? Es la    clave de identificación de la máquina del servidor.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/12primeraConexionWindowsCliente.PNG)
+![ClienteWindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindowsconexionserver3.png)
+![ClienteWindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindowsconexionserver3-1.png)
 
  - La siguiente vez que volvamos a usar PuTTY ya no debe aparecer el mensaje de advertencia porque hemos memorizado la identificación del servidor SSH. Comprobarlo.
 
 ### 3. Cambiamos la identidad del servidor
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/13identidadServer.PNG)
+- Los ficheros ssh_host*key y ssh_host*key.pub, son ficheros de clave pública/privada que identifican a nuestro servidor frente a nuestros clientes. Confirmar que existen el en /etc/ssh,:
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidad8.png)
+
+- Modificar el fichero de configuración SSH (/etc/ssh/sshd_config) para dejar una única línea: HostKey /etc/ssh/ssh_host_rsa_key. Comentar el resto de líneas con configuración HostKey. Este parámetro define los ficheros de clave publica/privada que van a identificar a nuestro servidor. Con este cambio decimos que sólo se van a utilizar las claves del tipo RSA.
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidad9.png)
 
 ### 3.1 Regenerar certificados
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/14serverCertificados.PNG)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidadcertificado10.png)
 
  - Como usuario root ejecutamos: ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key. ¡OJO! No poner password al certificado.
+ 
+ ![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidad9-1.png)
+ 
  - Reiniciar el servicio SSH: systemctl restart sshd.
  - Comprobar que el servicio está en ejecución correctamente: systemctl status sshd
 
 ### 3.2 Comprobamos
 #### Windows
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/15ConexionWindows2.PNG)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidadcertificado11-2.png)
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidadcertificado11-3.png)
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidadcertificado11-4.png)
 
  - Comprobar qué sucede al volver a conectarnos desde los dos clientes, usando los usuarios 1er-apellido-alumno2 y 1er-apellido-alumno1
  - Podemos comprobar que en windows nos dara un aviso diciendonos que nuestra conexion a este usuario podria ser peligroso debido a un cambio repentino en la información.
@@ -83,130 +111,143 @@
  - Vemos que en usuario 2 no pasa nada ya que en este no nos habiamos metido todavía.
 
 #### Linux
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/18ConexionLinux2.PNG)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidadcertificado11.png)
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidadcertificado11-1.png)
 
  - Nos da un aviso de que se acaba de cambiar aolgo en el usuario quintero1 y que deberiamos tener cuidado.
  - Tambien comprobamos que el usuario quintero2 no dejara la conexión devido a que el servidor podría estar bajo un ataque.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/19errorLinux2.PNG)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxindetidadcertificado11-5.png)
 
  - Para solucionar el problema leemos los mensajes y ejecutamos el comando de la imagen.
 
 ### 4. Personalización del prompt Bash
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/23personalizacionbash.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxprompt13.png)
 
  - Añadimos en nuestro servidor las lineas para cambiar el promt de nuestro usuario quintero1
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/24personalizacionbash.png)
+!![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxprompt12.png)
 
  - Ademas creamos el fichero .alias si no lo teniamos creado en la ruta que pone en la imagen y añadimos esas lineas al fichero.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/25conexionlinuxbash.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxprompt14.png)
 
 ### 5. Autenticación mediante claves públicas
 #### Linux
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/20Linuxautenticacion.PNG)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxautentificacion16.png)
 
  - ssh-keygen -t rsa para generar un nuevo par de claves para el usuario
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/26clavespublicasLinux.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxautentificacion17.png)
 
  - Ahora vamos a copiar la clave pública (id_rsa.pub), al fichero "authorized_keys" del usuario remoto 1er-apellido-alumno4 que está definido en el servidor.
-
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/27clavespublicasLinux.png)
 
  - Comprobamos que desde el usuario quintero4 de linux nos deja la conexión cliente linux 
 
 #### Windows
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/27clavespublicasWindows.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxautentificacion18.png)
 
  - Comprobamos que desde el usuario quintero4 no nos deja la conexión cliente windows 
 
 ### 6. Uso de SSH como túnel para X
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/29tunelSSH.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxtunelssh19.png)
 
  - Instalar en el servidor una aplicación de entorno gráfico (APP1) que no esté en los clientes. Por ejemplo Geany. Si estuviera en el cliente entonces buscar otra aplicación o desinstalarla en el cliente.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/30tunelSSH.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxtunelssh20.png)
 
 - Modificar servidor SSH para permitir la ejecución de aplicaciones gráficas, desde los clientes. Consultar fichero de configuración /etc/ssh/sshd_config (Opción X11Forwarding yes)
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/31tunelSSH.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxtunelssh21.png)
 
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxtunelssh22.png)
  - Vamos a comprobar desde clientXXg, que funciona APP1(del servidor).
  - ssh -X primer-apellido-alumno1@serverXXg, nos conectamos de forma remota al servidor, y ahora ejecutamos APP1 de forma remota.
 
 ### 7. Aplicaciones Windows nativas
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/32WineSSH.png)
- - Pude instalar la aplicacion pero a la hora de intentar hacerla me daba un error y al final lo dejé a parte.
+`No hay captura de la instlaciòn pero se da por hecho que se instaló wine con "zypper install wine" y que se utilizó el notepad que está instalado por defecto como aplicación gráfica para la prueba de esta parte.` 
+
+- Instalar emulador Wine en el server25g.
+- Ahora podríamos instalar alguna aplicación de Windows en el servidor SSH usando el emulador Wine. O podemos usar el Block de Notas que viene con Wine: wine notepad.
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxnativa24.png)
+
+- Comprobar el funcionamiento del programa en server25g.
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxnativa23.png)
+
+- Comprobar funcionamiento del programa, accediendo desde client25g.
+
+- `Aviso tuve un problema con las imagenes y asi que posiblemente lo cambie en la versión del siguiente commit`
 
 ### 8. Restricciones de uso
 
 #### 8.1 Restricción sobre un usuario
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/33Retricciones.png)
+
 
  - Comprobamos que X11Forwarding esta en modo yes.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/34Retricciones.png)
+
 
  - Consultar/modificar fichero de configuración del servidor SSH (/etc/ssh/sshd_config) para restringir el acceso a determinados usuarios. Consultar las opciones AllowUsers, DenyUsers.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/35Retricciones.png)
+
 
  - /usr/sbin/sshd -t; echo $?, comprobar si la sintaxis del fichero de configuración del servicio SSH es correcta (Respuesta 0 => OK, 1 => ERROR).
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/36Retricciones.png)
+
 
  - Comprobarlo la restricción al acceder desde los clientes. (me falto el cliente de windows pero si funciono en Linux por logica tambien funcionaria en Windows).
 
 #### 8.2 Restricción sobre una aplicación
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/37RetriccionesApp.png)
+
 
  - En la imagen pone el usuario 1 pero despues esto es cambiado mas adelante por el usuario 4(esta parte tampoco la hize porque no acabe de entenderla).
 
 ### 9. Servidor SSH en Windows
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/38ServerwindowsLinux.png)
+
 
  - Comprobamos la configuración de nuestro servidor Windows y vemos si este tiene conexión con las otras maquinas.
 
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/39ServerwindowsWindows.png)
+
 
  - Configuración del fichero hosts de nuestro servidor.
  
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/40ServerwindowsWindows.png)
+
 
  - Hacemos ping a travez de nuestro cliente windows al servidor
 
 ### 9.1 Instalacion Openshh
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/41sshwindowsserver.png)
+
  
  - Descargamos la el comprimido de OpenSSH y lo descomprimimos en C:\archivos de programa\ 
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/42sshwindowsserver.png)
+
 
  - cd ‘C:\Program files\OpenSSH’, Iniciar PowerShell como Administrador y movernos hasta C:\Program files\OpenSSH:
  - Ejecutar el script para instalar los servicios “sshd” y “ssh-agent”
  - Set-ExecutionPolicy –ExecutionPolicy Bypass
  - .\install-sshd.ps1
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/43sshwindowsserver.png)
+
 
  - Al terminar debe indicar que los servicios se han instalado de forma satisfactoria. Podemos comprobar que se han instalado los servicios con el siguiente comando: PS> Get-Service sshd,ssh-agent
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/44sshwindowsserver.png)
+
  - Yo cambie aquí el orden porque si no me daba error asi que en vez de iniciar al final el servicio, lo inicie antes de crear las llaves
  - .\ssh-keygen.exe –A
  - .\FixHostFilePermissions.ps1 -Confirm:$false
 
 ### 9.1.1 Regla Firewall
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/45firewalReglawindowsserver.png)
+
 
  - Creamos una regla para permitir la conexion por Openssh.
 
 ### 9.1.2
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/45shellwindowsserver.png)
+
 
  - Abrimos el “Editor del Registro” de Windows (regedit.exe).
  - Nos desplazamos hasta la clave Equipo\HKEY_LOCAL_MACHINE\SOFTWARE.
@@ -217,12 +258,12 @@
 ### 9.2 Comprobaciones
 
 ##### Linux
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/46ComprobacionLinux.png)
+
 
  - Finalmente comprobamos en Linux si la configuración funciono y tenemos conexión.
 
 ##### Windows
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u1/ssh/images/46ComprobacionWindows.png)
+
 
  - Finalmente comprobamos en Windows si la configuración funciono y tenemos conexión.
 

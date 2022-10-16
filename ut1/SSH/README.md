@@ -27,7 +27,7 @@
 
 ### 1.3. Configuración cliente Windows.
 ![Clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindows1.png)
-![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux7.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxping7.png)
 
 - Añadir en C:\Windows\System32\drivers\etc\hosts los equipos serverXXg y clientXXg.
 - Comprobar haciendo ping a ambos equipos.
@@ -134,18 +134,18 @@
 
 ### 5. Autenticación mediante claves públicas
 #### Linux
-![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxautentificacion16.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxautenticacion16.png)
 
  - ssh-keygen -t rsa para generar un nuevo par de claves para el usuario
 
-![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxautentificacion17.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxautenticacion17.png)
 
  - Ahora vamos a copiar la clave pública (id_rsa.pub), al fichero "authorized_keys" del usuario remoto 1er-apellido-alumno4 que está definido en el servidor.
 
  - Comprobamos que desde el usuario quintero4 de linux nos deja la conexión cliente linux 
 
 #### Windows
-![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxautentificacion18.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxautenticacion18.png)
 
  - Comprobamos que desde el usuario quintero4 no nos deja la conexión cliente windows 
 

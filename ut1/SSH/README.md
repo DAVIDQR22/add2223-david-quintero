@@ -7,8 +7,8 @@
 ![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux4.png)
 
  - Aqui tenemos la configuración que yo utilize para mi servidor linux.
- - 
-  ![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux5.png)
+ 
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux5.png)
 
  - Comprobamos los cambios que hemos echo en la configuracion de nuestro servidor.
 
@@ -18,20 +18,19 @@
 
 ### 1.2. Configuración cliente Linux.
 ![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientelinux1.png)
-![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientelinux2.png) 
   
 - Añadir en /etc/hosts los equipos server25g, y client25w.
 
-![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux7.png)
+![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientelinux2.png)
 
 - Comprobar haciendo ping a ambos equipos.
 
 ### 1.3. Configuración cliente Windows.
-![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindows1.png)
-![ClienteLinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindows2.png)
+![Clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/clientewindows1.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinux7.png)
+
 - Añadir en C:\Windows\System32\drivers\etc\hosts los equipos serverXXg y clientXXg.
 - Comprobar haciendo ping a ambos equipos.
-'(Falto el ping de la maquina windows pero se vera mas adelante que funciona bien y hay conexión)'
 
 ### 2. Instalación del servicio SSH en GNU/Linux
 ![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxssh.png)

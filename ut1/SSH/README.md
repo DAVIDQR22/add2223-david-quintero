@@ -179,7 +179,6 @@
 
 - Comprobar funcionamiento del programa, accediendo desde client25g.
 
-- `Aviso tuve un problema con las imagenes y asi que posiblemente lo cambie en la versión del siguiente commit`
 
 ### 8. Restricciones de uso
 
@@ -188,82 +187,106 @@
 
  - Comprobamos que X11Forwarding esta en modo yes.
 
-
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones25.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones26.png)
 
  - Consultar/modificar fichero de configuración del servidor SSH (/etc/ssh/sshd_config) para restringir el acceso a determinados usuarios. Consultar las opciones AllowUsers, DenyUsers.
 
-
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones27.png)
 
  - /usr/sbin/sshd -t; echo $?, comprobar si la sintaxis del fichero de configuración del servicio SSH es correcta (Respuesta 0 => OK, 1 => ERROR).
 
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones29.png)
 
-
- - Comprobarlo la restricción al acceder desde los clientes. (me falto el cliente de windows pero si funciono en Linux por logica tambien funcionaria en Windows).
+ - Comprobarlo la restricción al acceder desde los clientes.
 
 #### 8.2 Restricción sobre una aplicación
 
 
- - En la imagen pone el usuario 1 pero despues esto es cambiado mas adelante por el usuario 4(esta parte tampoco la hize porque no acabe de entenderla).
+- Crear grupo remoteapps
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones28.png)
+
+- Incluir al usuario 1er-apellido-alumno4 en el grupo remoteapps.
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones28-1.png)
+
+- Localizar un programa (Por ejemplo "geany"). Posiblemente tenga permisos 755.
+- Poner al programa el grupo propietario "remoteapps".
+- Poner los permisos del ejecutable del programa a 750. Para impedir que los usuarios que no pertenezcan al grupo puedan   ejecutar el programa.
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones30.png)
+
+- Comprobamos el funcionamiento en el servidor en local.
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones30-1.png)
+
+- Comprobamos el funcionamiento desde el cliente en remoto (Recordar ssh -X ...).
+
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones30-2.png)
+![serverlinux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverlinuxrestricciones30-3.png)
 
 ### 9. Servidor SSH en Windows
 
 
  - Comprobamos la configuración de nuestro servidor Windows y vemos si este tiene conexión con las otras maquinas.
 
-
-
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows1.png)
 
  - Configuración del fichero hosts de nuestro servidor.
  
-
-
- - Hacemos ping a travez de nuestro cliente windows al servidor
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows2.png)
 
 ### 9.1 Instalacion Openshh
 
  
- - Descargamos la el comprimido de OpenSSH y lo descomprimimos en C:\archivos de programa\ 
+ - Descargamos el comprimido de OpenSSH y lo descomprimimos en C:\archivos de programa (86)\ 
 
-
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows3.png)
 
  - cd ‘C:\Program files\OpenSSH’, Iniciar PowerShell como Administrador y movernos hasta C:\Program files\OpenSSH:
  - Ejecutar el script para instalar los servicios “sshd” y “ssh-agent”
  - Set-ExecutionPolicy –ExecutionPolicy Bypass
  - .\install-sshd.ps1
 
-
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows4.png)
 
  - Al terminar debe indicar que los servicios se han instalado de forma satisfactoria. Podemos comprobar que se han instalado los servicios con el siguiente comando: PS> Get-Service sshd,ssh-agent
 
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows5.png)
 
- - Yo cambie aquí el orden porque si no me daba error asi que en vez de iniciar al final el servicio, lo inicie antes de crear las llaves
+- Generar las claves (certificados) del servido
  - .\ssh-keygen.exe –A
  - .\FixHostFilePermissions.ps1 -Confirm:$false
 
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows6.png)
+
 ### 9.1.1 Regla Firewall
 
+- Habilitar la regla de nombre “SSH” en el Firewall de Windows para permitir (Allow) conexiones TCP entrantes (Inbound) en el puerto 22 (SSH): PS> New-NetFirewallRule -Protocol TCP -LocalPort 22 -Direction Inbound -Action Allow -DisplayName SSH
 
- - Creamos una regla para permitir la conexion por Openssh.
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows7.png)
 
-### 9.1.2
+- Creamos una regla para permitir la conexion por Openssh.
 
+- Configuramos los servicios para que inicien automáticamente
 
- - Abrimos el “Editor del Registro” de Windows (regedit.exe).
- - Nos desplazamos hasta la clave Equipo\HKEY_LOCAL_MACHINE\SOFTWARE.
- - Creamos la clave “OpenSSH”.
- - Dentro de la clave “OpenSSH”, creamos un “Valor de cadena” (REG_SZ) con el nombre “DefaultShell” y cuyo valor es la ruta al
- - ejecutable de PowerShell: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe”
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows8.png)
 
 ### 9.2 Comprobaciones
 
+- Comprobar acceso SSH desde los clientes Windows y GNU/Linux al servidor SSH Windows.
+
 ##### Linux
 
-
- - Finalmente comprobamos en Linux si la configuración funciono y tenemos conexión.
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows9.png)
+- lsof -i -nP en GNU/Linux.
 
 ##### Windows
 
 
- - Finalmente comprobamos en Windows si la configuración funciono y tenemos conexión.
+- netstat -n en Windows.
+
+
 
 

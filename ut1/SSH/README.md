@@ -289,11 +289,11 @@
 
 ![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows10.png)
 
-- Servidor Windows
+- Servidor Windows ↑
 
 ![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows11.png)
 
-- Cliente Windows
+- Cliente Windows ↑
 
 
 

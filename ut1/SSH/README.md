@@ -278,14 +278,23 @@
 - Comprobar acceso SSH desde los clientes Windows y GNU/Linux al servidor SSH Windows.
 
 ##### Linux
-
-![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows9.png)
 - lsof -i -nP en GNU/Linux.
 
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows9.png)
+
+
+
 ##### Windows
-
-
 - netstat -n en Windows.
+
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows10.png)
+
+- Servidor Windows
+
+![clientewindows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut1/SSH/images/serverWindows11.png)
+
+- Cliente Windows
+
 
 
 

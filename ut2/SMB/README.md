@@ -268,7 +268,7 @@ debemos configurar el fichero `/etc/fstab`.
 * Reiniciar el equipo y comprobar que se realiza el montaje automático al inicio.
 
 ![SMB](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-17samba.png.png)
-![SMB](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-18samba.png)
+![SMB](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-18samba.png.png)
 
 ---
 

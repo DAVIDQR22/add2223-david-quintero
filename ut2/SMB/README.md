@@ -3,26 +3,30 @@
 
 Vamos a GNU/Linux, y creamos los siguientes grupos y usuarios locales:
 * Crear los grupos `piratas`, `soldados` y `sambausers`.
-* Crear el usuario `sambaguest`. Para asegurarnos que nadie puede usar `sambaguest` para
+* Crear el usuario `sambaguest`. Para asegurarnos que nadie puede usar `sambaguest`
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-1samba.png)
 
 entrar en nuestra máquina mediante login, vamos a modificar este usuario y le ponemos
 como shell `/bin/false`. NOTA: Podemos hacer estos cambios por entorno gráfico usando Yast, o
 por comandos editando el fichero `/etc/passwd`.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-2samba.png)
+
 * Dentro del grupo `piratas` incluir a los usuarios `pirata1`, `pirata2` y `supersamba`.
 * Dentro del grupo `soldados` incluir a los usuarios `soldado1` y `soldado2` y `supersamba`.
 * Dentro del grupo `sambausers`, poner a todos los usuarios `soldados`, `piratas`, `supersamba` y a `sambaguest`.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/4usuariogrupos.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-3samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-4samba.png)
+
 ## 1.2 Crear las carpetas para los futuros recursos compartidos
 
 * Creamos la carpeta base para los recursos de red de Samba de la siguiente forma:
     * `mkdir /srv/sambaXX`
     * `chmod 755 /srv/sambaXX`
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/5sambacompartido.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/6sambacompartido.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/7sambacompartido.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/7-2sambacompartido.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/7-3sambacompartido.png)
-
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-5samba.png)
 
 ## 1.3 Configurar el servidor Samba
 
@@ -30,19 +34,23 @@ por comandos editando el fichero `/etc/passwd`.
 * `Yast -> Samba Server`
     * Workgroup: `curso2021`
     * Sin controlador de dominio.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/9configuracionsambaserver.png)
+    
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-7samba.png)
 
 * En la pestaña de `Inicio` definimos
     * Iniciar el servicio durante el arranque de la máquina.
     * Ajustes del cortafuegos -> Abrir puertos
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/8configuracionsambaserver.png)
+    
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-8samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-9samba.png)
+
 > **Comprobar CORTAFUEGOS**
->
 > Para descartar un problema del servidor Samba con el cortafuegos, usaremos
 el comando `nmap -Pn IP-servidor-Samba` desde otra máquina GNU/Linux.
 Los puertos SMB/CIFS (139 y 445) deben estar abiertos.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/8nmap.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-8-1samba.png)
+
 ## 1.4 Crear los recursos compartidos de red
 
 Vamos a configurar los recursos compartidos de red en el servidor.
@@ -54,16 +62,20 @@ Podemos hacerlo modificando el fichero de configuración o por entorno gráfico 
     * `public`, será un recurso compartido accesible para todos los usuarios en modo lectura.
     * `barco`, recurso compartido de red de lectura/escritura para todos los piratas.
     * `castillo`, recurso compartido de red de lectura/escritura para todos los soldados.
+    
+    ![permisos](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/permisos3.png)
+    
 * Podemos modificar la configuración:
     * (a) Editando directamente el ficher `/etc/samba/smb.conf` o
     * (b) `Yast -> Samba Server -> Recursos compartidos -> Configurar`.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/10configuracionsambaserver.png)
-Ejemplo de fichero de configuración:
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/11configuracionsambaserver.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/12configuracionsambaserver.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/12-2configuracionsambaserver.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-11samba.png)
+
 * `testparm`, verificar la sintaxis del fichero de configuración.
 * `more /etc/samba/smb.conf`, consultar el contenido del fichero de configuración.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-12samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-12-1samba.png)
 
 ## 1.5 Usuarios Samba
 
@@ -72,30 +84,48 @@ Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
     * **¡OJO!: NO te saltes este paso.**
     * USUARIO son los usuarios que se conectarán a los recursos compartidos SMB/CIFS.
     * Esto hay que hacerlo para cada uno de los usuarios de Samba.
-    ![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/13configuracionsambaserver.png)
+    ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-13samba.png)
+    ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-13-1samba.png)
+    ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-13-2samba.png)
 
 * `pdbedit -L`, para comprobar la lista de usuarios Samba.
-    ![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/13-2configuracionsambaserver.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-14samba.png)
+    
 ## 1.6 Reiniciar
 * Ahora que hemos terminado con el servidor, hay que recargar los ficheros de configuración del servicio. Esto es, leer los cambios de configuración. Podemos hacerlo por `Yast -> Servicios`, o usar los comandos: `systemctl restart smb` y `systemctl restart nmb`.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-15samba.png)
+
 * `sudo lsof -i -Pn`, comprobar que el servicio SMB/CIF está a la escucha.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/14configuracionsambaserver.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-16samba.png)
+
 ---
 
 # 2. Windows
+
+   *  Configurar el cliente Windows.
+   *  Usar nombre y la IP que hemos establecido al comienzo.
+   *  Configurar el fichero ...\etc\hosts de Windows.
+   *  En los clientes Windows el software necesario viene preinstalado.
+   
+   ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2samba.png)
 
 ## 2.1 Cliente Windows GUI
 
 Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor Samba.
 
 * Escribimos `\\ip-del-servidor-samba` y vemos lo siguiente:
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/15windowscliente.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-1samba.png)
 
 * Acceder al recurso compartido `public`.
 ![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/15-1windowscliente.png)
 * Acceder al recurso compartido `castillo` con el usuario `soldado`.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/15-2windowscliente.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/15-3windowscliente.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-3samba.png)
+    
     * `net use` para ver las conexiones abiertas.
     * `net use * /d /y`, para borrar todas las conexión SMB/CIFS que se hayan realizado.
 ![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/15-4windowscliente.png)

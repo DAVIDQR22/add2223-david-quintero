@@ -123,41 +123,59 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-1samba.png)
 
 * Acceder al recurso compartido `public`.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/15-1windowscliente.png)
+* 
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-14faltabapublic.png)
+
 * Acceder al recurso compartido `castillo` con el usuario `soldado`.
 
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-3samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-2samba.png)
+   
+   * `net use` para ver las conexiones abiertas.
+   * `net use * /d /y`, para borrar todas las conexión SMB/CIFS que se hayan realizado.
     
-    * `net use` para ver las conexiones abiertas.
-    * `net use * /d /y`, para borrar todas las conexión SMB/CIFS que se hayan realizado.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/15-4windowscliente.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-3-1samba.png)
+
 * Acceder al recurso compartido `barco` con el usuario `pirata`.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/36barcos.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/37barcos.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-4samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-5samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-6samba.png)
+
 * Ir al servidor Samba.
 * Capturar imagen de los siguientes comandos para comprobar los resultados:
-    * `smbstatus`, desde el servidor Samba.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/38barcos.png)
-    * `lsof -i -Pn`, desde el servidor Samba.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/39barcos.png)
+   * `smbstatus`, desde el servidor Samba.
+    
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-7samba.png)
+
+   * `lsof -i -Pn`, desde el servidor Samba.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-8samba.png)
 
 ## 2.2 Cliente Windows comandos
 
 * Abrir una shell de windows.
 Capturar imagen de los comandos siguientes:
 * `net view \\IP-SERVIDOR-SAMBA`, para ver los recursos del servidor remoto.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/16configuracionsambaserver.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-9samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-10samba.png)
+
+
 Montar el recurso `barco` de forma persistente.
 * `net use S: \\IP-SERVIDOR-SAMBA\recurso contraseña /USER:usuario /p:yes` crear una conexión con el recurso compartido y lo monta en la unidad S. Con la opción `/p:yes` hacemos el montaje persistente. De modo que se mantiene en cada reinicio de máquina.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/17configuracionsambaserver.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-11samba.png)
 
 * Ahora podemos entrar en la unidad S ("s:") y crear carpetas, etc.
 * Capturar imagen de los siguientes comandos para comprobar los resultados:
     * `sudo smbstatus`, desde el servidor Samba.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/18configuracionsambaserver.png)
-    * `lsof -i -Pn`, desde el servidor Samba.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/19configuracionsambaserver.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/20configuracionsambaserver.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-12samba.png)
+
+   * `lsof -i -Pn`, desde el servidor Samba.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-13samba.png)
 
 ---
 

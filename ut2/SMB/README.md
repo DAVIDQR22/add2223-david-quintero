@@ -184,71 +184,78 @@ Montar el recurso `barco` de forma persistente.
 
 Desde en entorno gráfico, podemos comprobar el acceso a recursos compartidos SMB/CIFS.
 
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/21configuracionclientelinux.png)
-
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-1samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-4samba.png)
 
 Capturar imagen de lo siguiente:
 * Probar a crear carpetas/archivos en `castillo` y en  `barco`.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/22configuracionclientelinux.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/23configuracionclientelinux.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/24configuracionclientelinux.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/25configuracionclientelinux.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-2samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-3samba.png)
 
 * Comprobar que el recurso `public` es de sólo lectura.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/26configuracionclientelinux.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-5samba.png)
+
 * Capturar imagen de los siguientes comandos para comprobar los resultados:
     * `sudo smbstatus`, desde el servidor Samba.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/27comprobacionclientelinux.png)
-    * `sudo lsof -i -Pn`, desde el servidor Samba.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/28comprobacionclientelinux.png)
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/28-2comprobacionclientelinux.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-6samba.png)
+
+   * `sudo lsof -i -Pn`, desde el servidor Samba.
+    
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-7samba.png)
+
 ## 3.2 Cliente GNU/Linux comandos
-Capturar imagenes de todo el proceso.
+> Existen comandos (`smbclient`, `mount` , `smbmount`, etc.) para ayudarnos
+a acceder vía comandos al servidor Samba desde el cliente.
+> Puede ser que con las nuevas actualizaciones y cambios de las distribuciones
+alguno haya cambiado de nombre. ¡Ya lo veremos!
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-8samba.png)
 
 * Vamos a un equipo GNU/Linux que será nuestro cliente Samba. Desde este
 equipo usaremos comandos para acceder a la carpeta compartida.
 
 * Probar desde el cliente GNU/Linux el comando `smbclient --list IP-SERVIDOR-SAMBA`, que muestra los recursos SMB/CIFS del servidor remoto.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/29clientelinuxcomandos.png)
 
->No olvidarse de parar el cortafuegos para poder hacer la conexion sin problemas
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-9samba.png)
+
+> No olvidarse de parar el cortafuegos para poder hacer la conexion sin problemas
 
 * Ahora crearemos en local la carpeta `/mnt/remotoXX/castillo`.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/30clientelinuxcomandos.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-10samba.png)
+
 * **MONTAJE MANUAL**: Con el usuario root, usamos el siguiente comando para montar un recurso compartido de Samba Server, como si fuera una carpeta más de nuestro sistema:
 
 ```
 mount -t cifs //172.AA.XX.31/castillo /mnt/remotoXX/castillo -o username=soldado1
 ```
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/31clientelinuxcomandos.png)
-No olvidarse de poner sudo o ponerse como super usuario.
-
 * `df -hT`, para comprobar que el recurso ha sido montado.
 
-![]()
-
-> * Si montamos la carpeta de `castillo`, lo que escribamos en `/mnt/remotoXX/castillo`
-debe aparecer en la máquina del servidor Samba. ¡Comprobarlo!
-> * Para desmontar el recurso remoto usamos el comando `umount`.
-
-* Capturar imagen de los siguientes comandos para comprobar los resultados:
-    * `sudo smbstatus`, desde el servidor Samba.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/32clientelinuxcomandos.png)
-    * `sudo lsof -i -Pn`, desde el servidor Samba.
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-11samba.png)
 
 
 ## 3.3 Montaje automático
 
 * Hacer una instantánea de la MV antes de seguir. Por seguridad.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-13samba.png)
+
 * Capturar imágenes del proceso.
 * Reiniciar la MV.
 * `df -hT`. Los recursos ya NO están montados. El montaje anterior fue temporal.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/33clientelinuxcomandos.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-14samba.png)
 
 Para configurar acciones de montaje automáticos cada vez que se inicie el equipo,
 debemos configurar el fichero `/etc/fstab`.
 
 * Hacer una copia de seguridad al fichero `/etc/fstab`.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-15samba.png)
+
 > No saque la captura pero hize una copia del fstab con el comando cp /etc/fstab /etc/fstabcopia
 
 * Modificar el fichero, incluyendo una línea de la siguiente forma:
@@ -256,9 +263,12 @@ debemos configurar el fichero `/etc/fstab`.
 ```
 //IP-servidor-samba/public /mnt/remotoXX/public cifs username=soldado1,password=CLAVE-DE-SOLDADO1 0 0
 ```
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/34clientelinuxcomandos.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-16samba.png)
+
 * Reiniciar el equipo y comprobar que se realiza el montaje automático al inicio.
-![](https://github.com/DAVIDQR22/add2122-david-quintero/blob/main/1trimestre/u2/samba/images/35clientelinuxcomandos.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-17samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/3-18samba.png)
 
 ---
 

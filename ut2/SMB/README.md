@@ -31,17 +31,19 @@ por comandos editando el fichero `/etc/passwd`.
 ## 1.3 Configurar el servidor Samba
 
 * `cp /etc/samba/smb.conf /etc/samba/smb.conf.bak`, hacer una copia de seguridad del fichero de configuración antes de modificarlo.
-* `Yast -> Samba Server`
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-7samba.png)
+
+    * `Yast -> Samba Server`
     * Workgroup: `curso2021`
     * Sin controlador de dominio.
-    
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-7samba.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-8samba.png)    
 
 * En la pestaña de `Inicio` definimos
     * Iniciar el servicio durante el arranque de la máquina.
     * Ajustes del cortafuegos -> Abrir puertos
     
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-8samba.png)
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/1-9samba.png)
 
 > **Comprobar CORTAFUEGOS**

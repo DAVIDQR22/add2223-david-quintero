@@ -158,24 +158,24 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
 Capturar imagen de los comandos siguientes:
 * `net view \\IP-SERVIDOR-SAMBA`, para ver los recursos del servidor remoto.
 
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-9samba.png)
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-10samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-9.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-10.png)
 
 
 Montar el recurso `barco` de forma persistente.
 * `net use S: \\IP-SERVIDOR-SAMBA\recurso contraseña /USER:usuario /p:yes` crear una conexión con el recurso compartido y lo monta en la unidad S. Con la opción `/p:yes` hacemos el montaje persistente. De modo que se mantiene en cada reinicio de máquina.
 
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-11samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-11.png)
 
 * Ahora podemos entrar en la unidad S ("s:") y crear carpetas, etc.
 * Capturar imagen de los siguientes comandos para comprobar los resultados:
     * `sudo smbstatus`, desde el servidor Samba.
 
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-12samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-12.png)
 
    * `lsof -i -Pn`, desde el servidor Samba.
 
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-13samba.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/SMB/images/2-13.png)
 
 ---
 

@@ -257,5 +257,5 @@ ello podemos hacerlo de dos formas:
 * Reiniciar el equipo y comprobar que se monta el recurso remoto automáticamente.
 * `mount` o `df -hT`
 
-![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/12cupsclienteauto.png)
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/14cupsclienteauto.png)
 

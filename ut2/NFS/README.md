@@ -64,7 +64,7 @@ Vamos a la MV con Windows 2008 Server
     * En modo lectura/escritura con NFS.
     * Acceso a todos los equipos.
     
-    ![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver8.png)
+   ![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver8.png)
     
 * Crear la carpeta `c:\exportsXX\private`.
     * Configurar en `Carpeta -> Botón derecho propiedades -> Compartir NFS`.

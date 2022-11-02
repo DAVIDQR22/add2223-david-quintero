@@ -47,23 +47,38 @@ Vamos a la MV con Windows 2008 Server
 * Agregar rol `Servidor de Archivos`.
 * Marcar `Servicio para NFS`.
 
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver1.png)
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver2.png)
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver3.png)
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver4.png)
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver5.png)
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver6.png)
+
 ## 2.2 Configurar el servidor NFS
 
 * Crear la carpeta `c:\exportsXX\public`.
+
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver7.png)
+
     * Configurar en `Carpeta -> Botón derecho propiedades -> Compartir NFS`.
     * En modo lectura/escritura con NFS.
     * Acceso a todos los equipos.
+    
+    ![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver8.png)
+    
 * Crear la carpeta `c:\exportsXX\private`.
     * Configurar en `Carpeta -> Botón derecho propiedades -> Compartir NFS`.
     * Sólo en modo sólo lectura.
     * Acceso sólo al equipo cliente.
 
-![nfs-windows-servidor1](./images/nfs-windows-servidor1.png)
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver9.png)
 
 > En caso de problemas al acceder desde el cliente, configurar en el servidor
 el recurso con "Permitir Acceso Anónimo".
 
 * Ejecutamos el comando `showmount -e IP-DEL-SERVIDOR`, para comprobar que los recursos exportados.
+
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver10.png)
 
 # 3. Cliente NFS
 
@@ -76,23 +91,29 @@ Enterprise (Las versiones home y starter no tienen soporte para NFS).
 * En primer lugar vamos a instalar el componente cliente NFS para Windows.
 Para ello vamos a `Panel de Control -> Programas -> Activar o desactivar características de Windows`.
 
-![nfs-cliente1](./images/w7-nfs-cliente1.png)
-
 Captura imagen del resultado final.
 * Nos desplazamos por el menú hasta localizar Servicios para NFS y dentro de este, Cliente NFS.
 * Marcamos ambos y le damos a Aceptar.
 * En unos instantes tendremos el soporte habilitado.
 
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver11.png)
+
 Iniciar el servicio cliente NFS. Captura imagen del proceso.
 * Para iniciar el servicio NFS en el cliente, abrimos una consola con permisos de Administrador.
 * Ejecutamos el siguiente comando: `nfsadmin client start`
+
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver12.png)
 
 ## 3.2 Montando el recurso
 
 Ahora necesitamos montar el recurso remoto para poder trabajar con él.
 * Esto no lo hacemos con Administrador, sino con nuestro usuario normal.
 * Consultar desde el cliente los recursos que ofrece el servidor: `showmount -e ip-del-servidor`
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver13.png)
+
 * Montar recurso remoto: `mount –o anon,nolock,r,casesensitive \\ip-del-servidor\Nombre-recurso-NFS *`
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver14.png)
+
 
 > **Descripción de los parámetros**
 >
@@ -101,14 +122,10 @@ Ahora necesitamos montar el recurso remoto para poder trabajar con él.
 > * r: Sólo lectura. Para montar en modo lectura/escritura no usaremos este parámetro.
 > * casesensitive: Fuerza la búsqueda de archivos con distinción de mayúsculas y minúsculas (similar a los clientes de NFS basados en UNIX).
 
-![nfs-cliente2](./images/w7-nfs-cliente2.png)
-
 * Hemos decidido asignar la letra de unidad de forma automática, así que si no hay otras unidades de red
 en el sistema nos asignará la Z.
 
-![nfs-cliente3](./images/w7-nfs-cliente3.png)
-
-![nfs-cliente4](./images/w7-nfs-cliente4.png)
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver15.png)
 
 > Si hay problemas, entonces:
 >
@@ -148,17 +165,21 @@ Vamos a necesitar las siguientes máquinas:
 > * Enlace de interés a [NFS Sistema de Archivos de red](http://recursostic.educacion.es/observatorio/web/es/software/software-general/733-nfs-sistema-de-archivos-de-red)
 
 Instalar servidor NFS por Yast.
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/6cupsconfig.png)
+
+
 * Crear las siguientes carpetas/permisos:
     * `/srv/exportsXX/public`, usuario y grupo propietario `nobody:nogroup`
     * `/srv/exportsXX/private`, usuario y grupo propietario `nobody:nogroup`, permisos 770
+    ![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/1-1cupscarpetas.png)
+    
 * Vamos configurar el servidor NFS de la siguiente forma:
     * La carpeta `/srv/exportsXX/public`, será accesible desde toda la red en modo lectura/escritura.
     * La carpeta `/srv/exportsXX/private`, sea accesible sólo desde la IP del cliente, sólo en modo lectura.
 * Para ello usaremos o Yast o modificamos el fichero `/etc/exports` añadiendo las siguientes líneas:
 
 ```
-/srv/exportsXX/public *(rw,sync,no_subtree_check)
-/srv/exportsXX/private IP-DEL-CLIENTE/32(ro,sync,no_subtree_check)
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/1-2cupscarpetas.png)
 ```
 
 > OJO: NO debe haber espacios entre la IP y abrir paréntesis.
@@ -171,6 +192,8 @@ debemos resolverlas. Consultar los mensajes de error del servicio.
 
 * `showmount -e localhost`, muestra la lista de recursos exportados por el servidor NFS.
 
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/7cupsconfig.png)
+
 # 5. Cliente NFS
 
 Ahora vamos a comprobar que las carpetas del servidor son accesibles desde el cliente.
@@ -178,12 +201,15 @@ Normalmente el software cliente NFS ya viene preinstalado pero si tuviéramos qu
 OpenSUSE:
 * `zypper search nfs`, para buscar los paquetes nfs.
 * `zypper install nfs-client`, para instalar el paquete cliente.
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/7-1cupscliente.png)
 
 ## 5.1 Comprobar conectividad desde cliente al servidor
 
 * `ping ip-del-servidor`: Comprobar la conectividad del cliente con el servidor. Si falla hay que revisar las configuraciones de red.
 * `nmap ip-del-servidor -Pn`: nmap sirve para escanear equipos remotos, y averiguar que servicios están ofreciendo al exterior. Hay que instalar el paquete nmap, porque normalemente no viene preinstalado.
 * `showmount -e ip-del-servidor`: Muestra la lista de recursos exportados por el servidor NFS.
+
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/8cupscliente.png)
 
 ## 5.2 Montar y usar cada recurso compartido desde el cliente
 
@@ -192,15 +218,12 @@ OpenSUSE:
     * `/mnt/remotoXX/public`
     * `/mnt/remotoXX/private`
 * `showmount -e IP-DEL-SERVIDOR`, para consultar los recursos que exporta el servidor.
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/9cupscliente.png)
+
 * Montar cada recurso compartido en su directorio local correspondiente.
 
-> Ejemplo de montaje:
->
-> * `mount.nfs IP-DEL-SERVIDOR:/srv/exportXX/public /mnt/remotoXX/public` montar el recurso public del servidor GNU/Linux.
-> * `mount.nfs IP-DEL-SERVIDOR:/public /mnt/remotoXX/public`, para montar el recurso public del servidor Windows
-> * `mount.nfs ip-servidor-nfs-windows:/C/exportXX/public /mnt/remotoXX/windows`
-
 * `mount` o `df -hT`, para comprobar los recursos montados en nuestras carpetas locales.
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/10cupscliente.png)
 * `netstat -ntap`, para comprobar el acceso a los recursos NFS desde el cliente.
 * Ahora vamos a crear ficheros/carpetas dentro del recurso public.
 * Comprobar que el recurso private es de sólo lectura.
@@ -216,13 +239,13 @@ a no ser que hagamos una configuración permanente o automática.
 ello podemos hacerlo de dos formas:
     * Usando `Yast -> particionador -> NFS -> Add`.
     * Modificar directamente en el fichero `/etc/fstab` ([Consultar](http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-rg-es-4/s1-nfs-client-config.html))
+    ![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/11cupsclienteauto.png)
+    ![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/12cupsclienteauto.png)
+    
 * Incluir contenido del fichero `/etc/fstab` en la entrega.
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/13cupsclienteauto.png)
+
 * Reiniciar el equipo y comprobar que se monta el recurso remoto automáticamente.
 * `mount` o `df -hT`
+![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/12cupsclienteauto.png)
 
-# 6. Preguntas
-
-* ¿Nuestro cliente GNU/Linux NFS puede acceder al servidor Windows NFS? Comprobarlo.
-* ¿Nuestro cliente Windows NFS podría acceder al servidor GNU/Linux NFS? Comprobarlo.
-* Fijarse en los valores de usuarios propietario y grupo propietario de los ficheros
-que se guardan en el servidor NFS, cuando los creamos desde una conexión cliente NFS.

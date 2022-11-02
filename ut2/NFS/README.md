@@ -138,7 +138,9 @@ en el sistema nos asignará la Z.
 ![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsservercomprobacion20.png)
 
 * Leer y escribir en los recursos compartidos.
+
 ![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsservercomprobacion17.png)
+
 ![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsservercomprobacion21.png)
 
 * `netstat -n`, para comprobar el acceso a los recursos NFS desde el cliente.
@@ -186,9 +188,8 @@ Instalar servidor NFS por Yast.
     * La carpeta `/srv/exportsXX/private`, sea accesible sólo desde la IP del cliente, sólo en modo lectura.
 * Para ello usaremos o Yast o modificamos el fichero `/etc/exports` añadiendo las siguientes líneas:
 
-```
 ![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/1-2cupscarpetas.png)
-```
+
 
 > OJO: NO debe haber espacios entre la IP y abrir paréntesis.
 
@@ -255,5 +256,6 @@ ello podemos hacerlo de dos formas:
 
 * Reiniciar el equipo y comprobar que se monta el recurso remoto automáticamente.
 * `mount` o `df -hT`
+
 ![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/12cupsclienteauto.png)
 

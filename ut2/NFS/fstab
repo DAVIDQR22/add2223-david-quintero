@@ -1,0 +1,15 @@
+UUID=2e570d4c-c517-4525-9479-083406788b14  /                       btrfs  defaults                      0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /.snapshots             btrfs  subvol=/@/.snapshots          0  0
+UUID=7ed3502a-1977-4dd3-b4b8-8a7000d99a70  swap                    swap   defaults                      0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /var                    btrfs  subvol=/@/var                 0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /usr/local              btrfs  subvol=/@/usr/local           0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /tmp                    btrfs  subvol=/@/tmp                 0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /srv                    btrfs  subvol=/@/srv                 0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /root                   btrfs  subvol=/@/root                0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /opt                    btrfs  subvol=/@/opt                 0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /home                   btrfs  subvol=/@/home                0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /boot/grub2/x86_64-efi  btrfs  subvol=/@/boot/grub2/x86_64-efi  0  0
+UUID=2e570d4c-c517-4525-9479-083406788b14  /boot/grub2/i386-pc     btrfs  subvol=/@/boot/grub2/i386-pc  0  0
+UUID=6FC2-8848                             /boot/efi               vfat   utf8                          0  2
+172.19.25.31:/srv/exports25/public            /mnt/remoto25/public    nfs    defaults                      0  0
+

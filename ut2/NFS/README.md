@@ -113,7 +113,7 @@ Ahora necesitamos montar el recurso remoto para poder trabajar con él.
 
 * Montar recurso remoto: `mount –o anon,nolock,r,casesensitive \\ip-del-servidor\Nombre-recurso-NFS *`
 ![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver14.png)
-
+![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsservercomprobacion19.png)
 
 > **Descripción de los parámetros**
 >
@@ -127,14 +127,22 @@ en el sistema nos asignará la Z.
 
 ![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsserver15.png)
 
+
 > Si hay problemas, entonces:
 >
 > * Comprobar que la configuración del cortafuegos del servidor permite accesos NFS.
 > * Desde un cliente GNU/Linux hacer `nmap IP-del-servidor -Pn`. Debe aparecer abierto el puerto del servicio NFS
 
 * Comprobar en el cliente los recursos montados con `net use`.
+![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsservercomprobacion16.png)
+![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsservercomprobacion20.png)
+
 * Leer y escribir en los recursos compartidos.
+![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsservercomprobacion17.png)
+![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsservercomprobacion21.png)
+
 * `netstat -n`, para comprobar el acceso a los recursos NFS desde el cliente.
+![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/windows/windowsservercomprobacion18.png)
 * Para desmontar la unidad simplemente escribimos en una consola: `umount z:`
 
 ---

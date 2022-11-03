@@ -234,8 +234,14 @@ OpenSUSE:
 * `mount` o `df -hT`, para comprobar los recursos montados en nuestras carpetas locales.
 ![linux](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/10cupscliente.png)
 * `netstat -ntap`, para comprobar el acceso a los recursos NFS desde el cliente.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/15nfsnetstat.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/16nfscompro.png)
 * Ahora vamos a crear ficheros/carpetas dentro del recurso public.
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/17nfscompro.png)
+
 * Comprobar que el recurso private es de sólo lectura.
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut2/NFS/images/linux/18nfscompro.png)
 
 ## 5.3 Montaje automático
 

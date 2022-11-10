@@ -50,9 +50,9 @@ Puedes probar la nueva impresora abriendo el Bloc de notas y creando un fichero 
 
 > Dese a saber que yo en la primera prueba en vez de usar un dociumento de texto plano creado por mi utilize un archivo que habia por internet.
 
-![configuracion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/4impresion.png)
+![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/4impresion.png)
 
-![configuracion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/5impresion.png)
+![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/5impresion.png)
 
 > Se ve que no hubo problemas.
 
@@ -66,17 +66,28 @@ Vamos a la MV del servidor.
     * `Botón derecho -> Propiedades -> Compartir`
     * Como nombre del recurso compartido utilizar `PDFdavidquintero25`.
     
-    ![configuracion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/6impresion.png)
+    ![server](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/6impresion.png)
 
 ## 2.2 Comprobar desde el cliente
 
 Vamos al cliente:
 * Buscar recursos de red del servidor. Si tarda en aparecer ponemos `\\172.19.25.60 o server25w` en la barra de navegación.
+
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/7impresioncliente.png)
+
 * Seleccionar impresora -> botón derecho -> conectar.
     * Ponemos usuario/clave del Windows Server.
+    
+    ![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/8impresioncliente.png)
+    
+    ![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/9impresioncliente.png)
+    > Le damos a instalar controlador.
+    
 * Ya tenemos la impresora remota configurada en el cliente.
-* Probar la impresora remota imprimiendo documento `imprimirXXw-remoto`. Si tenemos problemas para que aparezca el PDF en el servidor, iniciar el
+* Probar la impresora remota imprimiendo documento `imprimir25w-remoto`. Si tenemos problemas para que aparezca el PDF en el servidor, iniciar el
 programa PDFCreator y esperar un poco.
+
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/10impresioncliente.png)
 
 > **INFO**: Para **buscar archivos** (Por ejemplo PDF) dentro de Windows podemos usar las funcionar de [buscar](https://www.islabit.com/10080/una-mejor-forma-de-buscar-archivos-en-windows-7.html)
 
@@ -89,6 +100,8 @@ Realizaremos una configuración para habilitar el acceso web a las impresoras de
 * Vamos al servidor.
 * Nos aseguramos de tener instalado el servicio "Impresión de Internet".
 
+![configuracion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/11impresioncliente.png)
+
 ## 3.2 Configurar impresión WEB
 
 En este apartado vamos a volver a agregar la impresora de red remota en el cliente, pero
@@ -98,9 +111,20 @@ Vamos a la MV cliente:
 * Abrimos un navegador Web.
 * Ponemos URL `http://<ip-del-servidor>/printers` (o `http://<nombre-del-servidor>/printers`)
 para que aparezca en nuestro navegador un entorno que permite gestionar las impresoras de dicho equipo, previa autenticación como uno de los usuarios del habilitados para dicho fin (por ejemplo el "Administrador").
+
+![configuracion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/12impresioncliente.png)
+
 * Pincha en la opción propiedades y captura lo que se ve. Apuntar el URL asociado al nombre de red de la impresora para usarlo más adelante.
+
+![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/13impresionclienteweb.png)
+
 * Agregar nueva impresora (NO es local) en el SO cliente.
 * Crear nueva impresora usando el URL (nombre de red) anterior.
+
+![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/14impresionclienteweb.png)
+![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/15impresionclienteweb.png)
+![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/16impresionclienteweb.png)
+![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/17impresionclienteweb.png)
 
 ## 3.3 Comprobar desde el navegador
 
@@ -113,9 +137,24 @@ Vamos a realizar seguidamente una prueba sencilla en tu impresora de red:
 * Accede a la configuración de la impresora a través del navegador.
     * Poner en `pausa` los trabajos de impresión de la impresora.
 * Ir a MV cliente.
+
+![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/18impresionclienteweb.png)
+
 * Probar la impresora remota imprimiendo documento `imprimirXXw-web`.
     * Comprobar que al estar la impresora en pausa, el trabajo aparece en cola de impresión del servidor.
+
+![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/18impresionclienteweb.png)
+
+> * Misma captura porque a fin de cuentas se demuestra los mismo.
+ 
 * Finalmente pulsa en reanudar el trabajo para que tu documento se convierta a PDF.
+
+![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/19impresionclienteweb.png)
+![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/20impresionclienteweb.png)
+
+> En la ultima imagen se bugueo un poco pero se puede ver en el architec que el archivo se paso a pdf.
+> Tambien podemos ver como en el pdfcreator se puede identificar que el archivo se paso sin problemas.
+
 * Si tenemos problemas para que aparezca el PDF en el servidor, iniciar el
 programa PDFCreator y esperar un poco.
 

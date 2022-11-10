@@ -10,7 +10,7 @@ Ejemplo de rúbrica:
 
 
 Necesitaremos 2 MV:
-* MV1: Windows Server 2019
+* MV1: Windows Server 2019 (en mi caso vale cualquier server con rol de impresión)
 * MV2: Windows 7/10 cliente
 
 ---
@@ -140,7 +140,7 @@ Vamos a realizar seguidamente una prueba sencilla en tu impresora de red:
 
 ![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/18impresionclienteweb.png)
 
-* Probar la impresora remota imprimiendo documento `imprimirXXw-web`.
+* Probar la impresora remota imprimiendo documento `imprimir25w-web`.
     * Comprobar que al estar la impresora en pausa, el trabajo aparece en cola de impresión del servidor.
 
 ![web](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1/images/linux/18impresionclienteweb.png)

@@ -81,34 +81,34 @@ en la máquina cliente.
 Ir al servidor.
 * Habilitamos la impresora como recurso de red compartido.
 
-![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4cupsserver.png)
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4cupscliente.png)
 
 > Es importante que el cliente tenga una IP definida en la cláusula Allow del servidor. Esto lo hicimos cuando especificamos "Allow @LOCAL".
 
-![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-1cupsserver.png)
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-1cupscliente.png)
 
 Ir a un cliente.
 * Abrir en el cortafuegos el acceso al servicio de impresión `ipp-client`. En el cortafuegos hay varias zonas, para saber la que tenemos activa hacemos `firewall-cmd --get-default-zone` (Seguramente la zona por defecto será `public`).
 
-![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-2cupsserver.png)
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-2cupscliente.png)
 
 * Iniciar la herramienta "configuración de impresión". Desbloqueamos con la clave de root.
 
-![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-3cupsserver.png)
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-3cupsclient.png)
 
 * Agregar impresora de red. Primero la buscamos en IP del servidor y nos debe aparecer automáticamente (Por ejemplo `ipp://ip-server:631/printers/CUPS-PDF`).
 
-![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-4cupsserver.png)
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-4cupscliente.png)
 
 * Crear una archivo "impresionXXremota.txt" con algún contenido.
 * Imprimir el documento en la impresora remota.
 
-![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-5cupsserver.png)
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-5cupscliente.png)
 
-![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-6cupsserver.png)
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-6cupscliente.png)
 
 Ir al servidor.
 * Comprobamos que se ha realizado la impresión remota.
 * Ver contenido del PDF.
 
-![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-7cupsserver.png)
+![cliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut3/p1b/images/4-7cupscliente.png)

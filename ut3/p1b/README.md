@@ -1,13 +1,5 @@
 # Servidor de Impresión GNU/Linux (CUPS)
 
-Ejemplo de rúbrica:
-
-| Sección               | Muy bien (2) | Regular (1) | Poco adecuado (0) |
-| --------------------- | ------------ | ----------- | ----------------- |
-| (2) Comprobar que el Servicio está en ejecución | | | |
-| (3) Comprobar que se imprime de forma local  | | | |
-| (4) Comprobar que se imprime de forma remota | | | |
-
 # 1. Preparativos
 
 Enlace de interés:

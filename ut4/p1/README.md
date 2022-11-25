@@ -159,7 +159,7 @@ Estamos usando la clase `posixAccount`, para almacenar usuarios dentro de un dir
 > Vamos a agregar al LDAP los usuarios de la tabla, pero en este caso vamos usar
 > la herramienta **pwdhash** para generar las claves encriptadas dentro de los ficheros "ldif".
 
-![ldapserver](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p1/images/4ldap.png)
+![ldapserver](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p1/images/4ldappwdhash.png)
 
 ## 4.1 Agregar los siguientes usuarios
 
@@ -181,8 +181,8 @@ Estamos usando la clase `posixAccount`, para almacenar usuarios dentro de un dir
 * `nmap -Pn IP-LDAP-SERVER`, comprobar que el puerto LDAP del servidor está abierto.
 Si no aparecen los puertos abiertos, entonces revisar el cortafuegos.
 
-![ldapserver](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p1/images/4-4ldap.png)
+![ldapcliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p1/images/4-4ldap.png)
 
 * `ldapsearch -H ldap://IP-LDAP-SERVER -W -D "cn=Directory Manager" -b "dc=ldapXX,dc=curso2021" "(uid=*)" | grep dn` para consultar los usuarios LDAP que tenemos en el servicio de directorio remoto.
 
-![ldapserver](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p1/images/4-5ldap.png)
+![ldapcliente](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p1/images/4-5ldap.png)

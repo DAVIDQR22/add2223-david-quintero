@@ -58,6 +58,8 @@ Ir a la MV cliente:
 * `cat /etc/passwd | grep mazinger`, nos aseguramos que el usuario NO es local.
 * `su -l mazinger`, entrar con el usuario definido en LDAP.
 
+![ldap2](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p2/images/2-2ldap2.png)
+
 # 3. Crear usuarios usando otros comandos
 
 > Para que funcionen bien los siguientes comandos el fichero /root/.dsrc
@@ -65,22 +67,26 @@ debe estar correctamente configurado.
 
 Ir a la MV del servidor:
 * `dsidm localhost user list`, consultar la lista de usuarios.
+
+![ldap2](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p2/images/3ldap2.png)
+
 * Crear usuario robot1:
-```
-dsidm localhost user create --uid robot1 \
-   --cn robot1 --displayName 'robot1' --uidNumber 2101 --gidNumber 100 \
-  --homeDirectory /home/robot1
-```
+
+![ldap2](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p2/images/3-1ldap2.png)
+
 * Poner la clave al usuario:
-```
-dsidm localhost account reset_password \
-  uid=robot1,ou=people,dc=ldapXX,dc=curso2122
-```
+
+![ldap2](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p2/images/3-2ldap2.png)
+
 * `dsidm localhost user list`, consultar la lista de usuarios.
+
+![ldap2](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p2/images/3-3ldap2.png)
 
 Ir a la MV cliente:
 * Abrir terminal con nuestro usuario normal (NO usar root).
 * `su robot1`, entrar como ese usuario.
+
+![ldap2](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p2/images/3-4ldap2.png)
 
 # 4. Usando Yast
 
@@ -93,6 +99,9 @@ del cliente.
 * Ir a la MV cliente.
 * `Yast -> Usuarios Grupos`.
 * Set filter: `LDAP users`.
+
+![ldap2](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut4/p2/images/4-1ldap2.png)
+
 * Bind DN: `cn=Directory Manager,dc=ldapXX,dc=curso2021`.
 * Crear el grupo `villanos` (Estos se crearán dentro de la `ou=groups`).
 * Crear usuario `baron` (Se creará dentro de la `ou=people`).

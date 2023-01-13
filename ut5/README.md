@@ -280,7 +280,6 @@ Para que se apliquen los cambios de configuración tenemos 2 caminos:
     1. `vagrant destroy`, destruir la MV.
     
 ![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant4-3-1.png)
-    
     2. `vagrant up` volver a crearla.
 
 ![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant4-3-2.png)
@@ -426,6 +425,7 @@ Una vez hemos preparado la máquina virtual ya podemos crear el box.
 ![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant6-1-3.png)
 
 * Comprobar que funciona.
+
 ![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant6-1-4.png)
 
 ![windows](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant6-1-5.png)
@@ -438,43 +438,3 @@ Cuando terminemos la práctica, ya no nos harán falta las cajas (boxes) que ten
 
 * `vagrant box list`, para consultar las cajas disponibles.
 * `vagrant box remove BOXNAME`, para eliminar una caja BOXNAME de nuestro repositorio local.
-
-> **OPCIONAL**: En una máquina real con SO Windows
-> * Instalar Vagrant en Windows.
-> * Levantar una máquina con Vagrant en Windows
-
-# ANEXO
-
-## Pendiente
-
-* Ampliar esta práctica para comprobar el funcionamiento de Vagrant bajo Windows y usar cajas/boxes vagrant con Windows. Ver ejemplo:
-
-```
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
-Vagrant.configure("2") do |config|
-  config.vm.define "windows10" do |i|
-    i.vm.box = "senglin/win-10-enterprise-vs2015community"
-    i.vm.box_version = "1.0.0"
-    i.vm.hostname = "profesor42w10"
-    i.vm.network "public_network", bridge: [ "eth0" ]
-    i.vm.network :forwarded_port, guest: 80, host: 8081
-    i.vm.provider "virtualbox" do |v|
-      v.name = "windows10-ent-vs2015"
-      v.memory = 2048
-    end
-  end
-end
-```
-
-## A.3 Cambios próximo Curso
-
-* Arreglar warning que Apache2 "Fully qualified. domain name".
-* Duda: ¿El comando vagrant package XXX debe ejecutarse en $HOME? Porque parece que se crea un directorio .vagrant.
-
-## A.4 VBoxManage
-
-https://www.garron.me/es/gnu-linux/controla-maquinas-virtuales-virtualbox.html
-
-VBoxManage showvminfo VMNAME | grep State

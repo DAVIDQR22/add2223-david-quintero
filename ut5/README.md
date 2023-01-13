@@ -90,7 +90,7 @@ Vamos a crear una MV nueva y la vamos a iniciar usando Vagrant:
 * `vagrant status`, consultar el estado actual de la máquina virtual.
 * `vagrant destroy`, para eliminar la máquina virtual (No los ficheros de configuración).
 
-![eliminar](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant1-4.png)
+![eliminar](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant1-4-1.png)
 
 * > En mi caso no la borre en ese momento pero lo hice despues.
 
@@ -222,20 +222,6 @@ Incluir en el fichero `Vagrantfile` las configuraciones necesarias para:
 > NOTA: Podemos usar `vagrant reload`, si la MV está en ejecución, para que coja los cambios de configuración sin necesidad de reiniciar.
 
 # 4. Proyecto: Suministro mediante Puppet
-
-Puppet es un orquestador. Sirve para aprovisionar las máquinas locales o remotas sin usar scripting.
-
-> Enlace de interés:
-> * [Crear un entorno de desarrollo con vagrant y puppet](http://developerlover.com/crear-un-entorno-de-desarrollo-con-vagrant-y-puppet/)
-> * `friendsofvagrant.github.io -> Puppet Provisioning`
->
-> Veamos imágenes de ejemplo (de Aarón Gonźalez Díaz) con Vagrantfile configurado con puppet:
->
-> ![vagranfile-puppet](./images/vagrantfile-puppet.png)
->
-> Fichero de configuración de puppet `mipuppet.pp`:
->
-> ![vagran-puppet-pp-file](./images/vagrant-puppet-pp-file.png)
 
 ## 4.1 Preparativos
 

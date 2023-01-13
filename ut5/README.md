@@ -277,10 +277,12 @@ Para que se apliquen los cambios de configuración tenemos 2 caminos:
 ![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant4-3.png)
 
 * **Con la MV apagada**:
-    1. `vagrant destroy`, destruir la MV.
+    
+   1. `vagrant destroy`, destruir la MV.
     
 ![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant4-3-1.png)
-    2. `vagrant up` volver a crearla.
+   
+   2. `vagrant up` volver a crearla.
 
 ![comprobacion](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/images/vagrant4-3-2.png)
 

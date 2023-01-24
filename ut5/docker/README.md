@@ -130,7 +130,7 @@ Ahora estamos dentro del contenedor, y vamos a personalizarlo a nuestro gusto:
 ```
 root@IDContenedor:/# cat /etc/motd            # Comprobamos que estamos en Debian
 root@IDContenedor:/# apt update
-
+```
 ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker2-2.png)
 
 root@IDContenedor:/# apt install -y nginx # Instalamos nginx en el contenedor
@@ -280,6 +280,7 @@ EXPOSE 80
 
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 ```
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-1-1.png)
 
 > * Enlace de interés: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/
 
@@ -302,7 +303,14 @@ El fichero Dockerfile contiene toda la información necesaria para construir el 
 
 * `cd dockerXXlocal`, entramos al directorio con el Dockerfile.
 * `docker build -t nombre-alumno/nginx2 .`, construye una nueva imagen a partir del Dockerfile. OJO: el punto final es necesario.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-1-2.png)
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-2.png)
+
 * `docker images`, ahora debe aparecer nuestra nueva imagen.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-2-1.png)
 
 ## 4.3 Crear contenedor y comprobar
 
@@ -311,14 +319,23 @@ A continuación vamos a crear un contenedor con el nombre `app4nginx2`, a partir
 ```
 docker run --name=app4nginx2 -p 8082:80 -t nombre-alumno/nginx2
 ```
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-3.png)
 
 * El terminal se ha quedado "bloqueado" porque el comando anterior no ha terminado y lo hemos lanzado en primer plano (foreground). Vamos a abrir otro terminal.
 
 Desde otra terminal:
 * `docker ps`, para comprobar que el contenedor está en ejecución y en escucha por el puerto deseado.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-3-1.png)
+
 * Comprobar en el navegador:
     * URL `http://localhost:PORTNUMBER`
+    
+    ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-3-2.png)
+    
     * URL `http://localhost:PORTNUMBER/holamundo2.html`
+    
+    ![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-3-3.png)
 
 Ahora que sabemos usar los ficheros Dockerfile, vemos que es más sencillo usar estos ficheros para intercambiar con nuestros compañeros que las herramientas de exportar/importar que usamos anteriormente.
 
@@ -334,6 +351,9 @@ El ejemplo anterior donde creábamos una imagen Docker con Nginx, pero esto se p
     * Proyecto: dockerXXb
     * Autor: Nombre del alumno
     * Fecha: Fecha actual
+    
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-4.png)
+
 * Crea el siguiente `Dockerfile`
 
 ```
@@ -342,20 +362,20 @@ FROM nginx
 COPY holamundo3.html /usr/share/nginx/html
 RUN chmod 666 /usr/share/nginx/html/holamundo3.html
 ```
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-4-1.png)
 
 * Poner el el directorio `dockerXXb` los ficheros que se requieran para construir el contenedor.
 * `docker build -t nombre-alumno/nginx3 .`, crear la imagen.
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-4-2.png)
+
 * `docker run -d --name=app5nginx3 -p 8083:80 nombre-alumno/nginx3`, crear contenedor. En este caso hemos añadido la opción "-d" que sirve para ejecutar el contenedor en segundo plano (background).
 
-| Parámetro            | Descripción |
-| -------------------- | ----------- |
-| docker run -d        | Crea un contenedor y lo ejecuta en segundo plano |
-| --name               | Nombre del nuevo contenedor |
-| -p                   | Redirección de puertos |
-|                      | Se expone el puerto 80 del contenedor por le puerto 8083 de la máquina anfitrión |
-| nombre-alumno/nginx3 | Imagen que se usará para crear el contenedor |
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-4-3.png)
 
 * Comprobar el acceso a "holamundo3.html".
+
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker4-4-4.png)
 
 # 5. Docker Hub
 

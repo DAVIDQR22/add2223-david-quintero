@@ -428,4 +428,4 @@ Hacemos lo mismo con las imágenes. Como ya no las necesitamos las eliminamos:
 * `docker images`, identificar todas las imágenes.
 * `docker rmi ...`, eliminar las imágenes.
 
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker6-1.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/docker/images/docker6-2.png)

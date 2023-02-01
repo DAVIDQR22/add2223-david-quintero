@@ -255,24 +255,24 @@ Vamos a crear un estado llamado `users` que nos servirá para crear un grupo y u
 
 * Crear estado `dirs` para crear las carpetas `private` (700), `public` (755) y `group` (750) en el HOME del usuario `koji` (ver ejemplos en el ANEXO).
 
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-2-1.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-2-1.PNG)
 
 * Aplicar el estado `dirs`.
 
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-2-2.png)
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-2-3.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-2-2.PNG)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-2-3.PNG)
 
 ## 5.3 Ampliar estado "apache"
 
 * Crear el fichero `/srv/salt/base/files/holamundo.html`. Escribir dentro el nombre del alumno y la fecha actual.
 * Incluir en el estado "apache" la creación del fichero "holamundo" en el Minion. Dicho fichero se descargará desde el servidor Salt Máster y se copiará en el Minion.
 
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-3.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-3.PNG)
 
 * Ir al master y aplicar el estado "apache".
 
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-3-1.png)
-![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-3-2.png)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-3-1.PNG)
+![](https://github.com/DAVIDQR22/add2223-david-quintero/blob/main/ut5/saltstack/images/saltstackmaster5-3-2.PNG)
 
 # 6. Añadir Minion de otro SO
 
